@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Badge, Button, Center, Image, Stack, Text } from "@chakra-ui/react";
-import logo from './img/Logo-BlackBox.png'
+import logo from "./img/Logo-BlackBox.png";
+import Zoom from 'react-reveal/Zoom';
+
 
 
 function App() {
@@ -36,20 +38,35 @@ function App() {
     question ? question.correct_answer : null,
   ].flat();
 
-  console.log(question);
+  
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5
+      }
+    }
+  }
+  
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 }
+  }
 
   return (
-    <Stack justify="center" align="center" h="600px">
-      <Stack align='center' direction='row'>
-          <Text fontSize='35px'>BlackBox Vision </Text>
-          <Image
-    boxSize='100px'
-    objectFit='cover'
-    src={logo}
-    alt='Dan Abramov'
-  />
+    <Stack 
+    variants={container}
+    initial="hidden"
+    animate="show"
+    justify="center" align="center" h="600px">
+      <Stack
+       variants={item} size={50}
+      align="center" direction="row">
+        <Text fontSize="35px">BlackBox Vision </Text>
+        <Image boxSize="100px" objectFit="cover" src={logo} alt="Dan Abramov" />
       </Stack>
-    
+
       <Stack
         borderRadius="20px"
         justify="center"
@@ -63,7 +80,7 @@ function App() {
             <Text fontSize="xl" color="white">
               Respuestas Correctas : {point}
             </Text>
-            <Button onClick={()=>setPosition(0)}>Volver a jugar</Button>
+            <Button onClick={() => setPosition(0)}>Volver a jugar</Button>
           </Stack>
         ) : (
           <>
@@ -77,17 +94,20 @@ function App() {
                 {question ? question.category : null}
               </Center>
             </Badge>
-            <Stack
+
+                   <Stack
               bg="#fd5f00"
               borderRadius="10px"
-              justify="center"
               w={{ base: "300px", md: "350px" }}
               h="auto"
             >
-              <Center p="20px" color="white">
+                 <Center p="20px" color="white">
                 {question ? question.question : null}
+                <Text>{position + 1}</Text>
               </Center>
+             
             </Stack>
+       
             <Stack>
               <Badge variant="outline" colorScheme="gray">
                 Difficulty -{" "}
@@ -98,9 +118,24 @@ function App() {
             </Stack>
             <Stack h="200px" width={{ base: "300px", md: "350px" }}>
               {allAnswers.map((item) => (
-                <Button w="auto" bg="#d9faff" onClick={() => click(item)}>
+                <Zoom>
+                  <Stack>
+                            <Button 
+                initial='hidden'
+                animate='visible'
+                transition={{
+                   duration:1,
+                   ease:'easeInOut',
+                   delay:0.2
+  
+                }}
+                w="auto" bg="#d9faff" onClick={() => click(item)}>
                   {item}
                 </Button>
+                  </Stack>
+                 
+                </Zoom>
+         
               ))}
             </Stack>
           </>
