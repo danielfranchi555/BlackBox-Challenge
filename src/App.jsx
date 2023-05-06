@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Badge, Button, Center, Image, Stack, Text } from "@chakra-ui/react";
 import logo from "./img/Logo-BlackBox.png";
-import Zoom from 'react-reveal/Zoom';
+import {Zoom} from 'react-reveal/Zoom';
 
 
 
