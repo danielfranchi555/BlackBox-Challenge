@@ -5,7 +5,7 @@ import React from "react";
 export const Answers = ({ allAnswers, selectAnswer }) => {
   return (
     <Stack mb='20px'>
-       {allAnswers.map((item) => (
+       {allAnswers.sort().map((item) => (
         <Button
           bg='#f6f6f6'
           w="100%"
