@@ -8,7 +8,6 @@ import {
   Image,
   Stack,
   Text,
-  keyframes,
 } from "@chakra-ui/react";
 import logo from "./img/Logo-BlackBox.png";
 import { Spinner } from "@chakra-ui/react";
