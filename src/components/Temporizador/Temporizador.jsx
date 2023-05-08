@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { UsarContext } from "../Context/Context";
-import { Progress } from "@chakra-ui/react";
+import { Progress, Stack } from "@chakra-ui/react";
 
 export const Temporizador = ({ position, setPosition }) => {
   const { temp, setTemp } = UsarContext();
@@ -18,8 +18,8 @@ export const Temporizador = ({ position, setPosition }) => {
   });
 
   return (
-    <>
+    <Stack >
       <Progress size="sm" colorScheme="cyan" value={temp} />
-    </>
+    </Stack>
   );
 };

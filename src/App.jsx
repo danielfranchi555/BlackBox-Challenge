@@ -117,34 +117,35 @@ function App() {
 
   return (
         <Stack justify="center" align="center" h="600px">
-      <Stack size={50} align="center" direction="row">
-        <Text fontSize="35px" color='white'>BlackBox Vision </Text>
-        <Image boxSize="100px" objectFit="cover" src={logo} alt="Dan Abramov" />
-      </Stack>
       <Stack
         borderRadius="20px"
         justify="center"
         align="center"
         bg="#263849"
-        w={{ base: "440px", md: "500px" }}
-        h="500px"
+        w={{ base: "300px", md: "400px" }}
+        h="auto"
       >
+         <Stack   size={50} align="center" direction="row">
+         <Text fontSize="16px" color='white'>BlackBox Vision </Text>
+        <Image boxSize="50px" objectFit="cover" src={logo} alt="Dan Abramov" />
+      </Stack>
         {position >= data.length ? (
-          <Stack>
+          <Stack p='20px' >
             <Text fontSize="xl" color="white">
-              Respuestas Correctas : {point}
+              Respuestas Correctas : {point}/10
             </Text>
-            <Button onClick={() => resetGame() }>Volver a jugar</Button>
+            <Button bg='cyan' onClick={() => resetGame() }>Volver a jugar</Button>
           </Stack>
         ) : (
           <Stack 
           as={motion.div}
           initial={{ scale: 0 }}
           animate={{ scale: 0.9}}
+          position='asbsolute'
           w='400px' justify='center' align='center'>
             <Badge
               borderRadius="10px"
-              w={{ base: "430px", md: "400px" }}
+              w={{ base: "300px", md: "400px" }}
               variant="solid"
               bg="#41506b"
             >
@@ -154,16 +155,13 @@ function App() {
                Category /  { question ? question.category : null}
               </Center>
             </Badge>
-
             <Question
               textoEntrada={textoEntrada}
               getTranslate={getTranslate}
               question={question}
               position={position}
             />
-            
-            <Stack>
-
+            <Stack >
               <Badge      
                variant="outline" colorScheme="gray">
                 Difficulty -{" "}
@@ -173,16 +171,13 @@ function App() {
                 </span>
               </Badge>
             </Stack>
-            <Stack  h="300px" width={{ base: "430px", md: "400px" }}>
+            <Stack  h="300px" width={{ base: "300px", md: "400px" }}>
               <Answers selectAnswer={selectAnswer} allAnswers={allAnswers} />
               <Temporizador setPosition={setPosition} position={position}></Temporizador>
-
             </Stack>
           </Stack>
         )}
-
       </Stack>
-      
     </Stack>
   
   );
