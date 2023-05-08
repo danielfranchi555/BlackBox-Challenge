@@ -16,7 +16,9 @@
     "framer-motion": "^10.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-reveal": "^1.2.2"
+    "react-i18next": "^12.2.2",
+    "react-reveal": "^1.2.2",
+    "yandex-translate-api": "^1.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
