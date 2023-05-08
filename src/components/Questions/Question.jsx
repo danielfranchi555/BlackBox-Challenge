@@ -4,11 +4,10 @@ import React from "react";
 export const Question = ({ question }) => {
   return (
     <Stack
-      bg="#fd5f00"
+      bg="#3bb4c1"
       borderRadius="10px"
       w={{ base: "430px", md: "400px" }}
       h="auto"
-      border="solid white"
     >
       <Center p="20px" color="white">
         {question

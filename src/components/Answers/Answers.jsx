@@ -7,6 +7,7 @@ export const Answers = ({ allAnswers, selectAnswer }) => {
     <Stack mb="30px">
       {allAnswers.map((item) => (
         <Button
+         bg='#f6f6f6'
           w="100%"
           as={motion.div}
           initial={{ scale: 0 }}

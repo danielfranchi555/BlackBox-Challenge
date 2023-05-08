@@ -65,9 +65,9 @@ function App() {
       setPoint(point + 1);
       toast({
         position: "bottom",
-        duration: 700,
+        duration: 800,
         render: () => (
-          <Box color="white" p={3} bg="orange.500">
+          <Box color="white" p={3} bg="cyan">
             Answer Correct!!
           </Box>
         ),
@@ -118,14 +118,14 @@ function App() {
   return (
         <Stack justify="center" align="center" h="600px">
       <Stack size={50} align="center" direction="row">
-        <Text fontSize="35px">BlackBox Vision </Text>
+        <Text fontSize="35px" color='white'>BlackBox Vision </Text>
         <Image boxSize="100px" objectFit="cover" src={logo} alt="Dan Abramov" />
       </Stack>
       <Stack
         borderRadius="20px"
         justify="center"
         align="center"
-        bg="#00204a"
+        bg="#263849"
         w={{ base: "440px", md: "500px" }}
         h="500px"
       >
@@ -146,7 +146,7 @@ function App() {
               borderRadius="10px"
               w={{ base: "430px", md: "400px" }}
               variant="solid"
-              bg="#005792"
+              bg="#41506b"
             >
 
               <Center
@@ -168,7 +168,7 @@ function App() {
                variant="outline" colorScheme="gray">
                 Difficulty -{" "}
                 <span
-                style={{ color: "#fd5f00" }}>
+                style={{ color: "cyan" }}>
                   {question ? question.difficulty : null}
                 </span>
               </Badge>

@@ -19,7 +19,7 @@ export const Temporizador = ({ position, setPosition }) => {
 
   return (
     <>
-      <Progress size="sm" colorScheme="orange" value={temp} />
+      <Progress size="sm" colorScheme="cyan" value={temp} />
     </>
   );
 };
