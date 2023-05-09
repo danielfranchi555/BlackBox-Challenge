@@ -1,4 +1,4 @@
-import { Badge, Button, Center, Image, Stack, Text } from "@chakra-ui/react";
+import { Badge, Button, Center, Image, Spinner, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import logo from "../../img/Logo-BlackBox.png";
 import { UsarContext } from "../Context/Context";
@@ -21,8 +21,15 @@ export const Aplication = () => {
     setPosition,
     point,
     resetGame,
+    loading
   } = UsarContext();
 
+  if(loading){
+  return  <Center mt='100px'> <Spinner  thickness='4px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='blue.500' size='xl'/></Center> 
+  }
   return (
     <Stack justify="center" align="center" h="600px">
       <Stack

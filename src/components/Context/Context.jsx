@@ -54,7 +54,7 @@ export const Context = ({ children }) => {
       setPoint(point + 1);
       toast({
         position: "bottom",
-        duration: 800,
+        duration: 900,
         render: () => (
           <Box color="white" p={3} bg="cyan">
             Answer Correct!!
@@ -67,7 +67,7 @@ export const Context = ({ children }) => {
     } else {
       toast({
         position: "bottom",
-        duration: 700,
+        duration: 900,
         render: () => (
           <Box color="white" p={3} bg="red.500">
             Answer Incorrect!!
@@ -91,18 +91,12 @@ export const Context = ({ children }) => {
     question ? question.correct_answer : null,
   ].flat();
 
-  if (loading) {
-    return (
-      <Center mt="200px">
-        <Spinner size="xl" color="red.500" />
-      </Center>
-    );
-  }
+
 
 
 
   return (
-    <ContextState.Provider value={{ setTemp, temp,position,data,question,textoEntrada,getTranslate,selectAnswer,allAnswers,setPosition,point,resetGame}}>
+    <ContextState.Provider value={{ setTemp, temp,position,data,question,textoEntrada,getTranslate,selectAnswer,allAnswers,setPosition,point,resetGame,loading}}>
       {children}
     </ContextState.Provider>
   );
